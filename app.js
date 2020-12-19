@@ -5,9 +5,6 @@ const tsapi = require('torrent-search-api');
 const app = express();
 const port = process.env.PORT || 3000;
 
-
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 // async function torRes() {
@@ -33,9 +30,9 @@ app.get('/tors', (req, res) => {
         })
       }
         tsapi.enableProvider('Rarbg');
-        return await tsapi.search(req.query.address, 'All', 10);
+        return await tsapi.search(req.query.address, 'All', 15);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 }
 
@@ -55,12 +52,12 @@ app.get('/tors', (req, res) => {
             //             res.send(datas);
 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
 
     } 
     torRes().then((data)=>{
-        console.log(data);
+        // console.log(data);
         res.send(data);
     })
     // torRes().then((data)=>{
@@ -82,16 +79,12 @@ app.get('/tors', (req, res) => {
     //     //     console.log(title)
     //     // }
 
-
-
-
     //     // res.send({
     //     //     title:title,
     //     //     magnet:magnet
     //     //     // seeds:datas.seeds
     //     // });
     // });
-
 
 })
 app.listen(port)
