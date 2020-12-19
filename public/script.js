@@ -17,7 +17,7 @@ search.addEventListener('submit',(e) => {
 			// console.log(dat[1].title)
 			titleinp.textContent='';
 			if(dat.length===0){
-				reSearch.textContent+="Search again... ";
+				return reSearch.textContent+="Search again... ";
 			}
 			else{
 				for(var i=1;i<dat.length;i++){
