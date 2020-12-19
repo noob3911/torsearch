@@ -18,9 +18,15 @@ search.addEventListener('submit',(e) => {
 			for(var i=1;i<dat.length;i++){
 				const list = document.createElement('li');
 				const magnet = document.createElement('ul');
-				list.innerHTML =dat[i].title;
+				const size = document.createElement('ul');
+				const seeds = document.createElement('ul');
+				list.innerHTML ="<b>Title</b>:  " + dat[i].title;
+				size.innerHTML="Size: " + dat[i].size; 
+				seeds.innerHTML="Seeds: " + dat[i].seeds;
 				magnet.innerHTML=dat[i].magnet;
 				titleinp.appendChild(list);
+				titleinp.appendChild(size);
+				titleinp.appendChild(seeds);
 				list.appendChild(magnet);
 			}
 			// if(dat.error){
